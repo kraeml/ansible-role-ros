@@ -1,0 +1,6 @@
+
+- name: Install desired ROS package
+  become: yes
+  apt:
+    pkg: "ros-{{ ros_release }}-{{ ros_package }}"
+    state: present

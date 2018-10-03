@@ -1,15 +1,8 @@
----
-- name: Add ROS repository apt-key
-  apt_key:
-    url: "{{ ros_apt_key }}"
-    state: present
+- name: Setup ket and repositories for ROS
+  include_tasks: pre_install.yml
 
-- name: Add ROS repository
-  apt_repository:
-    repo: "deb {{ ros_apt_uri }} {{ ansible_lsb.codename }} main"
-    state: present
+- name: Install ROS
+  include_tasks: install_ros.yml
 
-- name: Install desired ROS package
-  apt:
-    pkg: "ros-{{ ros_release }}-{{ ros_package }}"
-    state: present
+- name: After Installing ROS:
+  include_tasks: after_install.yml
