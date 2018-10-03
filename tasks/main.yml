@@ -4,5 +4,5 @@
 - name: Install ROS
   include_tasks: install_ros.yml
 
-- name: After Installing ROS:
+- name: After Installing ROS
   include_tasks: after_install.yml

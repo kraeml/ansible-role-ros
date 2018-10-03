@@ -6,7 +6,7 @@
   shell: "rosdep update"
 
 - name: set environment variables
-  shell: 'echo "source /opt/ros/{{ ros_release }}/setup.bash" >> ~/.bashrc'
+  shell: 'echo "source /opt/ros/{{ ros_release }}/setup.bash" >> /home/vagrant/.bashrc'
 
 - name: set environment variables for root
   become: yes
