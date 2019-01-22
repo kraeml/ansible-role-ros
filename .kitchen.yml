@@ -19,6 +19,9 @@ platforms:
   - name: ubuntu-precise
     driver_config:
       image: ubuntu:precise
+  - name: ubuntu-xenial
+    driver_config:
+      image: ubuntu:xenial
 
 # Docs @ https://github.com/neillturner/kitchen-ansible/blob/master/provisioner_options.md
 suites:
@@ -39,6 +42,7 @@ suites:
         ros_release: hydro
     excludes:
       - ubuntu-trusty
+      - ubuntu-xenial
 
   # ROS Groovy support Quantal, Precise, and Oneiric (No support for Oneiric here).
   # http://wiki.ros.org/groovy/Installation/Ubuntu
@@ -48,3 +52,13 @@ suites:
         ros_release: groovy
     excludes:
       - ubuntu-trusty
+      - ubuntu-xenial
+
+  
+  - name: kinetic
+    attributes:
+      extra_vars:
+        ros_release: kinetic
+    excludes:
+      - ubuntu-trusty
+      - ubuntu-precise

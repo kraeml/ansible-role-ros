@@ -1,3 +1,6 @@
+- name: Install python
+  include_tasks: ansible.yml
+
 - name: Setup ket and repositories for ROS
   include_tasks: pre_install.yml
 

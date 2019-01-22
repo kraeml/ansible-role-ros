@@ -3,8 +3,9 @@
 # - "groovy" on Ubuntu "precise"
 # - "hydro"  on Ubuntu "precise"
 # - "indigo" on Ubuntu "trusty"
-ros_release: "indigo"
-ros_package: "ros-base"
+ros_release: "kinetic"
+ros_package: "desktop"
+username: "ubuntu"
 
 # Optionally use a mirror for the ROS packages
 ros_apt_uri: "http://packages.ros.org/ros/ubuntu"

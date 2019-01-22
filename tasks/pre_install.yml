@@ -1,9 +1,6 @@
 ---
 - name: Add ROS repository apt-key
-  become: yes
-  apt_key:
-    url: "{{ ros_apt_key }}"
-    state: present
+  shell: 'sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116'
 
 - name: Add ROS repository
   become: yes

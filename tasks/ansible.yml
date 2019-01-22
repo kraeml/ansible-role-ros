@@ -1,0 +1,4 @@
+- name: Install Python if missing
+  raw: test -e /usr/bin/python || (apt -y update && apt install -y python)
+- name: Add missing modules for Ubuntu 16.04
+  raw: apt-get install aptitude -y

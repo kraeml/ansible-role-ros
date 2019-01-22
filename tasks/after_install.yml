@@ -6,8 +6,18 @@
   shell: "rosdep update"
 
 - name: set environment variables
-  shell: 'echo "source /opt/ros/{{ ros_release }}/setup.bash" >> /home/vagrant/.bashrc'
+  shell: 'echo "source /opt/ros/{{ ros_release }}/setup.bash" >> /home/{{ username }}/.bashrc'
 
 - name: set environment variables for root
   become: yes
   shell: 'echo "source /opt/ros/{{ ros_release }}/setup.bash" >> /root/.bashrc'
+
+- name: Dependencies for building packages
+  become: yes
+  apt:
+    packages: 
+      - python-rosinstall
+      - python-rosinstall-generator
+      - python-wstool
+      - build-essential
+    state: present
