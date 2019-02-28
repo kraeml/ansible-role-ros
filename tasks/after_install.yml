@@ -6,7 +6,7 @@
   shell: "rosdep update"
 
 - name: set environment variables
-  shell: 'echo "source /opt/ros/{{ ros_release }}/setup.bash" >> /home/{{ username }}/.bashrc'
+  shell: 'echo "source /opt/ros/{{ ros_release }}/setup.bash" >> /home/{{ ansible_user_id }}/.bashrc'
 
 - name: set environment variables for root
   become: yes
@@ -15,7 +15,7 @@
 - name: Dependencies for building packages
   become: yes
   apt:
-    packages: 
+    packages:
       - python-rosinstall
       - python-rosinstall-generator
       - python-wstool

@@ -5,7 +5,7 @@
 # - "indigo" on Ubuntu "trusty"
 ros_release: "kinetic"
 ros_package: "desktop"
-username: "ubuntu"
+username: "{{ansible_user_id}}"
 
 # Optionally use a mirror for the ROS packages
 ros_apt_uri: "http://packages.ros.org/ros/ubuntu"
