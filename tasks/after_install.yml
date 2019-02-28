@@ -15,7 +15,7 @@
 - name: Dependencies for building packages
   become: yes
   apt:
-    packages:
+    name:
       - python-rosinstall
       - python-rosinstall-generator
       - python-wstool
